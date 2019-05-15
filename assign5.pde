@@ -584,7 +584,7 @@ String convertFramesToTimeString(int frames){	// Requirement #4
 }
 
 color getTimeTextColor(int frames){				// Requirement #5
-	if(frames==7200){
+	if(frames>=7200){
     return #00ffff;
   }else if(frames<7200 && frames>=3600){
     return #ffffff;
