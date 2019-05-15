@@ -578,8 +578,8 @@ String convertFramesToTimeString(int frames){	// Requirement #4
     x=120;
   }else if(frames<7200 && frames>3600){
     x=60;}else{x=0;}
-  String seconds=nf(floor(frames/60-x),2);
-  String minutes=nf(floor(frames/3600),2);
+  String seconds=nf(int(frames/60-x),2);
+  String minutes=nf(int(frames/3600),2);
   return minutes+":"+seconds;
 }
 
