@@ -580,7 +580,7 @@ String convertFramesToTimeString(int frames){	// Requirement #4
     x=60;}else{x=0;}
   String seconds=nf(floor(frames/60-x),2);
   String minutes=nf(floor(frames/3600),2);
-  return minutes+':'+seconds;
+  return minutes+":"+seconds;
 }
 
 color getTimeTextColor(int frames){				// Requirement #5
