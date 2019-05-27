@@ -197,6 +197,10 @@ void initClocks(){
   for(int i = 0; i < cabbageX.length; i++){
     clockX[i] = SOIL_SIZE * floor(random(SOIL_COL_COUNT));
     clockY[i] = SOIL_SIZE * ( i * 4 + floor(random(4)));
+    if (clockX[i] == cabbageX[i] && clockY[i] ==cabbageY[i]){
+    clockX[i] = SOIL_SIZE * floor(random(SOIL_COL_COUNT));
+    clockY[i] = SOIL_SIZE * ( i * 4 + floor(random(4)));
+    }
   }
 	// Requirement #1: Complete this method based on initCabbages()
 	// - Remember to reroll if the randomized position has a cabbage on the same soil!
@@ -574,7 +578,9 @@ boolean isHit(float ax, float ay, float aw, float ah, float bx, float by, float 
 
 String convertFramesToTimeString(int frames){	// Requirement #4
   int x;
-  if(frames>7200){
+  if(frames<14400 && frames>10800){
+    x=180;
+  }else if(frames<10800 && frames>7200){
     x=120;
   }else if(frames<7200 && frames>3600){
     x=60;}else{x=0;}
